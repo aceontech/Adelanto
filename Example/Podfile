@@ -1,0 +1,14 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'Adelanto', :exclusive => true do
+  pod "Adelanto", :path => "../"
+end
+
+target 'Tests', :exclusive => true do
+  pod "Adelanto", :path => "../"
+
+  pod 'Specta', '~> 0.2.1'
+  pod 'Expecta'
+  pod 'FBSnapshotTestCase'
+  pod 'Expecta+Snapshots'
+end
