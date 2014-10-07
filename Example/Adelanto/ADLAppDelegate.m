@@ -7,12 +7,13 @@
 //
 
 #import "ADLAppDelegate.h"
+#import <ADLVersionManager.h>
 
 @implementation ADLAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [ADLVersionManager saveVersionFromMainBundle];
     return YES;
 }
 							
