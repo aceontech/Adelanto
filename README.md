@@ -11,7 +11,7 @@
 
 ADLVersionManager can be used to display the app's current version and build number
 in the iOS Settings panel. In order for this to work, you need to add a
-Settings.bundle to your app and add the following section to its Root.plist:
+```Settings.bundle``` to your app and add the following section to its ```Root.plist```:
 
 ```xml
 <dict>
@@ -38,6 +38,8 @@ Modify your ```AppDelegate.m```:
 ```
 
 ## Requirements
+
+iOS 7+
 
 ## Installation
 
