@@ -39,7 +39,7 @@ Modify your ```AppDelegate.m```:
 
 ## Requirements
 
-iOS 7+
+iOS 6+
 
 ## Installation
 

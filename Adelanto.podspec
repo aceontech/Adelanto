@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "Adelanto"
-  s.version          = "0.1.0"
+  s.version          = "0.1.1"
   s.summary          = "iOS version and update utilities"
   s.description      = <<-DESC
                        ADLVersionManager can be used to display the app's current version and build number in the iOS Settings panel.
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/aceontech/Adelanto.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/aceontech'
 
-  s.platform     = :ios, '7.1'
+  s.platform     = :ios, '6.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes'

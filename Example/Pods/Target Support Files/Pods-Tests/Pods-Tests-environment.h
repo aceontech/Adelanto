@@ -10,7 +10,7 @@
 #define COCOAPODS_POD_AVAILABLE_Adelanto
 #define COCOAPODS_VERSION_MAJOR_Adelanto 0
 #define COCOAPODS_VERSION_MINOR_Adelanto 1
-#define COCOAPODS_VERSION_PATCH_Adelanto 0
+#define COCOAPODS_VERSION_PATCH_Adelanto 1
 
 // Expecta
 #define COCOAPODS_POD_AVAILABLE_Expecta
