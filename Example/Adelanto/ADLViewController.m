@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.updateButton = [ADLUpdateButton buttonWithUpdateCentralURL:[NSURL URLWithString:@"https://raw.githubusercontent.com/aceontech/Adelanto/master/UpdateCentralExample/adl_central.plist"]];
+    self.updateButton = [ADLUpdateButton buttonWithUpdateCentralURL:[NSURL URLWithString:@"https://raw.githubusercontent.com/aceontech/Adelanto/feature/update/UpdateCentralExample/adl_central.plist"]];
     [self.updateButton setTitle:@"Check for updates" forState:UIControlStateNormal];
     self.updateButton.frame = CGRectMake(44, 44, 200, 44);
 
