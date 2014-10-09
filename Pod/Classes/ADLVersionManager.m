@@ -3,6 +3,7 @@
 //
 
 #import "ADLVersionManager.h"
+#import "ADLConstants.h"
 
 
 @implementation ADLVersionManager
@@ -14,7 +15,7 @@
 + (void)saveVersionFromMainBundleWithKey:(NSString *)key {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSDictionary *bundleInfo = [NSBundle mainBundle].infoDictionary;
-    NSString *version = [NSString stringWithFormat:@"%@ build %@", bundleInfo[@"CFBundleShortVersionString"], bundleInfo[@"CFBundleVersion"]];
+    NSString *version = [NSString stringWithFormat:@"%@ build %@", bundleInfo[ADLBundleVersionNumberKey], bundleInfo[ADLBundleBuildNumberKey]];
     [defaults setValue:version forKey:key];
     [defaults synchronize];
 }

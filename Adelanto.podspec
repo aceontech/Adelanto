@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "Adelanto"
-  s.version          = "0.1.1"
+  s.version          = "0.2.0"
   s.summary          = "iOS version and update utilities"
   s.description      = <<-DESC
                        ADLVersionManager can be used to display the app's current version and build number in the iOS Settings panel.
@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '6.0'
   s.requires_arc = true
 
-  s.source_files = 'Pod/Classes'
+  s.source_files = 'Pod/Classes/**/*'
   s.resource_bundles = {
     'Adelanto' => ['Pod/Assets/*.png']
   }

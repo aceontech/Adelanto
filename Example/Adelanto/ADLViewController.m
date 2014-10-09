@@ -7,23 +7,32 @@
 //
 
 #import "ADLViewController.h"
+#import "ADLUpdateButton.h"
 
 @interface ADLViewController ()
-
+@property(nonatomic, strong) ADLUpdateButton *updateButton;
 @end
 
 @implementation ADLViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
+#pragma mark - Lifecycle
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    self.updateButton = [ADLUpdateButton buttonWithUpdateCentralURL:[NSURL URLWithString:@"https://raw.githubusercontent.com/aceontech/Adelanto/master/UpdateCentralExample/adl_central.plist"]];
+    [self.updateButton setTitle:@"Check for updates" forState:UIControlStateNormal];
+    self.updateButton.frame = CGRectMake(44, 44, 200, 44);
+
+    // Translate to Dutch
+    //    self.updateButton.updateAvailableTitle = @"Update beschikbaar";
+    //    self.updateButton.updateAvailableMessage = @"Versie %@ is beschikbaar (huidige versie %@).\n\nWilt u nu upgraden?";
+    //    self.updateButton.yesButtonTitle = @"Ja";
+    //    self.updateButton.noButtonTitle = @"Neen";
+    //    self.updateButton.okButtonTitle = @"Oké";
+    //    self.updateButton.skipVersionButtonTitle = @"Versie overslaan";
+
+    [self.view addSubview:self.updateButton];
 }
 
 @end

@@ -6,38 +6,33 @@
 //  Copyright (c) 2014 Alex Manarpies. All rights reserved.
 //
 
-SpecBegin(InitialSpecs)
+#import "ADLUpdateManager.h"
+#import "RACSignal+Operations.h"
+#import "RACScheduler.h"
+#import "ADLUpdate.h"
 
-describe(@"these will fail", ^{
+SpecBegin(UpdateManager)
 
-    it(@"can do maths", ^{
-        expect(1).to.equal(2);
-    });
+        describe(@"update manager", ^{
+            __block ADLUpdateManager *manager;
 
-    it(@"can read", ^{
-        expect(@"number").to.equal(@"string");
-    });
-    
-    it(@"will wait and fail", ^AsyncBlock {
-        
-    });
-});
+            before(^{
+                manager = [ADLUpdateManager managerWithUpdateCentralURL:[NSURL URLWithString:@"https://raw.githubusercontent.com/aceontech/Adelanto/master/UpdateCentralExample/adl_central.plist"]];
+            });
 
-describe(@"these will pass", ^{
-    
-    it(@"can do maths", ^{
-        expect(1).beLessThan(23);
-    });
-    
-    it(@"can read", ^{
-        expect(@"team").toNot.contain(@"I");
-    });
-    
-    it(@"will wait and succeed", ^AsyncBlock {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-            done();
+            it(@"should report new version (signals)", ^AsyncBlock {
+                [[[[manager checkForUpdates]
+                        deliverOn:[RACScheduler mainThreadScheduler]]
+                        doNext:^(ADLUpdate *update) {
+                            expect(update).notTo.beNil();
+                            expect(update).to.beKindOf([ADLUpdate class]);
+                            done();
+                        }]
+                        subscribeError:^(NSError *error) {
+                            expect(error).to.beNil();
+                            done();
+                        }];
+            });
         });
-    });
-});
 
 SpecEnd

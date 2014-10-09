@@ -2,13 +2,16 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target 'Adelanto', :exclusive => true do
   pod "Adelanto", :path => "../"
+
+  pod 'libextobjc/EXTScope', '~> 0.4.0'
+  pod 'ReactiveCocoa', '~> 2.3.1'
 end
 
 target 'Tests', :exclusive => true do
   pod "Adelanto", :path => "../"
 
   pod 'Specta', '~> 0.2.1'
-  pod 'Expecta'
-  pod 'FBSnapshotTestCase'
-  pod 'Expecta+Snapshots'
+  pod 'Expecta', '~> 0.3.1'
+  pod 'FBSnapshotTestCase', '~> 1.2.0'
+  pod 'Expecta+Snapshots', '~> 1.2.1'
 end
