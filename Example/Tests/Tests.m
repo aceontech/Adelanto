@@ -17,7 +17,7 @@ SpecBegin(UpdateManager)
             __block ADLUpdateManager *manager;
 
             before(^{
-                manager = [ADLUpdateManager managerWithUpdateCentralURL:[NSURL URLWithString:@"https://raw.githubusercontent.com/aceontech/Adelanto/master/UpdateCentralExample/adl_central.plist"]];
+                manager = [ADLUpdateManager managerWithUpdateCentralURL:[NSURL URLWithString:@"https://raw.githubusercontent.com/aceontech/Adelanto/feature/update/UpdateCentralExample/adl_central.plist"]];
             });
 
             it(@"should report new version (signals)", ^AsyncBlock {
